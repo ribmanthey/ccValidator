@@ -14,6 +14,7 @@
 ## Sprint cards
 * MVP1
     * a working REST API server, one endpoint, dummy backend that supplies mapped data results
+        * DONE
     * automated test that exercises the endpoint
     * set of unit tests that exercise the range of valid tests given
     * set of integration tests that exercise the range of valid tests given, via the endpoint

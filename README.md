@@ -18,6 +18,8 @@
     * automated test that exercises the endpoint
         * DONE
     * set of unit tests that exercise the range of valid tests given
+        * DONE
+        * note: Groovy used for the simplicity of testing over sa map of strings
     * set of integration tests that exercise the range of valid tests given, via the endpoint
     * replace dummy back end with active algorithm, tests confirm good-to-go
 * MVP2

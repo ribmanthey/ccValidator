@@ -6,31 +6,33 @@ public class PANValidator {
     }
 
     /**
-     * This is obviously a dummy method that only serves to reply to the sample test cases
-     * Replace with a real one after installing working test cases.
+     * Card Type       Begins With       Number Length
+     * AMEX            34 or 37          15
+     * Discover        6011              16
+     * MasterCard      51-55             16
+     * Visa            4                 13 or 16
      */
     private static String getCardType(String pan) {
-        String cardType;
-        switch (pan) {
-            case "4111111111111111":
-            case "4111111111111":
-            case "4012888888881881":
-                cardType = "VISA";
-                break;
-            case "378282246310005":
-                cardType = "AMEX";
-                break;
-            case "6011111111111117":
-                cardType = "Discover";
-                break;
-            case "5105105105105100":
-            case "5105 1051 0510 5106":
-                cardType = "MasterCard";
-                break;
-            default:
-                cardType = "Unknown";
+        try {
+            // Strip spaces, so that the card type can be identified even if it's then invalid
+            String squashedPan = pan.replaceAll(" ","");
+            long panNum = Long.parseLong(squashedPan);
+            int panLen = squashedPan.length();
+
+            int digit1 = (int) (panNum/Math.pow(10,panLen-1));
+            if (digit1 == 4) return "VISA";
+
+            int digits12 = (int) (panNum/Math.pow(10,panLen-2));
+            if (digits12 == 34 || digits12 == 37) return "AMEX";
+            if (digits12 >= 51 && digits12 <= 55) return "MasterCard";
+
+            int digits1234 = (int) (panNum/Math.pow(10,panLen-4));
+            if (digits1234 == 6011) return "Discover";
+
+        } catch (NumberFormatException e) {
+            // fall through to "Unknown"
         }
-        return cardType;
+        return "Unknown";
     }
 
     /**

@@ -23,6 +23,7 @@
     * set of integration tests that exercise the range of valid tests given, via the endpoint
         * DONE
     * replace dummy back end with active algorithm, tests confirm good-to-go
+        * DONE algorithm for card type, TODO algorithm for validity
 * MVP2
     * oblige the provision of a security token to access, eg: JWT
     * add security testing
@@ -36,3 +37,4 @@
 * add a parameterised version of the rest-assured test to test the given sample variations
 * update libraries to later versions
 * some code in the tests could be shared, especially the test data blob
+* VISA and Visa are both stated in the spec.  It would be good to be clear which.

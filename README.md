@@ -23,7 +23,7 @@
     * set of integration tests that exercise the range of valid tests given, via the endpoint
         * DONE
     * replace dummy back end with active algorithm, tests confirm good-to-go
-        * DONE algorithm for card type, TODO algorithm for validity
+        * DONE
 * MVP2
     * oblige the provision of a security token to access, eg: JWT
     * add security testing
@@ -38,3 +38,5 @@
 * update libraries to later versions
 * some code in the tests could be shared, especially the test data blob
 * VISA and Visa are both stated in the spec.  It would be good to be clear which.
+* The Luhn sum test deserves some corner case testing but the given sample tests pass.  I left in some println's as the Luhn algorithm might be a bit unclear as to what I was doing.
+* the card type and validity tests were combined into a single function with a multiple return (like Python) as I was reluctant to set field values in the class, aiming to have a pure function that can be static.  This really deserves to be redone in lambda style too.

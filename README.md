@@ -21,6 +21,7 @@
         * DONE
         * note: Groovy used for the simplicity of testing over sa map of strings
     * set of integration tests that exercise the range of valid tests given, via the endpoint
+        * DONE
     * replace dummy back end with active algorithm, tests confirm good-to-go
 * MVP2
     * oblige the provision of a security token to access, eg: JWT
@@ -33,3 +34,5 @@
 * Bring server location, port in from properties files, eg: application.yml
 * Include a clover test to find uncovered code
 * add a parameterised version of the rest-assured test to test the given sample variations
+* update libraries to later versions
+* some code in the tests could be shared, especially the test data blob

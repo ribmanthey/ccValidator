@@ -69,26 +69,23 @@ public class PANValidator {
     }
 
     private static boolean luhnTest(long panNum, int panLen) {
-        System.out.println("panNum = " + panNum);
-        System.out.println("panLen = " + panLen);
         int luhnSum = 0;
         for (int i = 0; i < panLen; i++) {
-            System.out.println("panNum = " + panNum);
             int tailDigit = (int) (panNum%10);
-            System.out.println("tailDigit = " + tailDigit);
             if (i%2 == 1) {
+                // double every second digit from tail
                 tailDigit = tailDigit*2;
-                System.out.println("tailDigit doubled = " + tailDigit);
                 if (tailDigit>9){
+                    // split the doubled digit if >10 and sum them as one
                     tailDigit = (tailDigit%10 + 1);
-                    System.out.println("tailDigit split and summed = " + tailDigit);
                 }
             }
+            // sum in the plain or doubled split digit
             luhnSum += tailDigit;
-            System.out.println("luhnSum = " + luhnSum);
+            // move on to the next tail digit
             panNum = panNum/10;
         }
-        System.out.println("final luhnSum = " + luhnSum);
+        // find if it's a multiple of 10
         return luhnSum%10 == 0;
     }
 }

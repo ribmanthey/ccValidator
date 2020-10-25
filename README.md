@@ -16,6 +16,7 @@
     * a working REST API server, one endpoint, dummy backend that supplies mapped data results
         * DONE
     * automated test that exercises the endpoint
+        * DONE
     * set of unit tests that exercise the range of valid tests given
     * set of integration tests that exercise the range of valid tests given, via the endpoint
     * replace dummy back end with active algorithm, tests confirm good-to-go
@@ -26,3 +27,7 @@
     * add performance testing
     * if viable, compile jar into GraalVM native and demonstrate
 
+## Room to Improve
+* Bring server location, port in from properties files, eg: application.yml
+* Include a clover test to find uncovered code
+* add a parameterised version of the rest-assured test to test the given sample variations
